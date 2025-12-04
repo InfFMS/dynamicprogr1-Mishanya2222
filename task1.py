@@ -9,3 +9,19 @@
 """
 
 # Решение будет здесь
+F = [0]*1000
+def calk(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 2
+    elif n == 3:
+        return 3
+    elif n == 4:
+        return 6
+    if F[n] != 0:
+        return F[n]
+    else:
+        F[n] = calk(n-1) +calk(n-2) + calk(n-4)
+        return F[n]
+print(calk(10))
